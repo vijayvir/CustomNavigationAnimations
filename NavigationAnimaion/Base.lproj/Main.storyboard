@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="y4i-WU-2Tr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kHg-qB-a3m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nW5-rq-uqx">
-                                <rect key="frame" x="16" y="81" width="187" height="130"/>
+                                <rect key="frame" x="16" y="156" width="187" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-Uy-d2A">
                                         <rect key="frame" x="51" y="50" width="46" height="30"/>
@@ -32,11 +32,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.2946390512" blue="0.26655690970000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tDM-cn-Pwb" customClass="DrawingViews">
-                                <rect key="frame" x="16" y="244" width="187" height="130"/>
-                                <color key="backgroundColor" red="0.99607849120000003" green="0.97254908080000002" blue="0.29803922770000002" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pA-z1-lqB">
                                 <rect key="frame" x="16" y="399" width="209" height="30"/>
@@ -44,7 +40,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgd-lH-R1l">
-                                <rect key="frame" x="362" y="88" width="46" height="30"/>
+                                <rect key="frame" x="330" y="88" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="0.48627454040000001" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eo2-Ng-1gv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="832"/>
+            <point key="canvasLocation" x="179" y="112"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -71,33 +67,36 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Custom Navigation " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0O-Sq-QYR">
+                                <rect key="frame" x="43" y="112" width="218" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUB-rv-ndr">
-                                <rect key="frame" x="0.0" y="426" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="8" y="538" width="136" height="30"/>
+                                <state key="normal" title="nav to Second View">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="rFp-c1-wXE" kind="push" id="7zu-9y-Ugp"/>
                                 </connections>
                             </button>
-                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bwp-kI-Pon" customClass="DrawingViews">
-                                <rect key="frame" x="10" y="165" width="231" height="226"/>
-                                <color key="backgroundColor" red="0.90980398650000005" green="0.023529414089999999" blue="0.98823535439999999" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.48627454040000001" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ze2-G3-8Cq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btn_navigate" destination="WUB-rv-ndr" id="lfk-Qy-OP5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="-19"/>
+            <point key="canvasLocation" x="-138" y="-66"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="WWF-6a-NP0">
@@ -108,7 +107,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Qce-GC-zrR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jud-PD-oc1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -134,7 +133,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gh-DH-Mmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-631" y="612"/>
+            <point key="canvasLocation" x="-653" y="-24"/>
         </scene>
     </scenes>
 </document>

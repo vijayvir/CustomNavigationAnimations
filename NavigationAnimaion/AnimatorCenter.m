@@ -6,10 +6,39 @@
 //  Copyright (c) 2016 Avneet Singh. All rights reserved.
 //
 
-#import "AnimationPop.h"
+#import "AnimatorCenter.h"
 
-@implementation AnimationPop
+@interface AnimatorCenter()
 
+{
+    CGRect framePushPop;
+    AnimatorCenterType  animatorCentertype;
+    
+}
+
+
+@end
+@implementation AnimatorCenter
+
+
+
+
+
+
+- (id) initWithStartLoction: (CGRect)frame withAnimationCircularType:(AnimatorCenterType)animationType{
+    
+    self = [super init];
+    if( !self ) return nil;
+    
+    
+    framePushPop = frame;
+    animatorCentertype = animationType;
+    
+    
+    
+    return self;
+    
+}
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
     return .5;
@@ -41,14 +70,14 @@
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
-    
-        
+    if (animatorCentertype == AnimatorCenterType_Pop)
+    {
         
         UIView * colorEffectwViw = [[UIView alloc]initWithFrame:CGRectMake(0, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height)];
         
         [[transitionContext containerView ]addSubview:colorEffectwViw];
         
-        colorEffectwViw.backgroundColor =[UIColor colorWithPatternImage:[AnimationPop imageWithView:toViewController.view]];
+        colorEffectwViw.backgroundColor =[UIColor colorWithPatternImage:[AnimatorCenter imageWithView:toViewController.view]];
         
         CGPoint  center = CGPointMake(fromViewController.view.center.x, fromViewController.view.center.y);
         
@@ -56,7 +85,7 @@
         
         [[transitionContext containerView ]addSubview:colorEffectViw];
         
-        colorEffectViw.backgroundColor =[UIColor colorWithPatternImage:[AnimationPop imageWithView:fromViewController.view]];
+        colorEffectViw.backgroundColor =[UIColor colorWithPatternImage:[AnimatorCenter imageWithView:fromViewController.view]];
         
         
         
@@ -126,21 +155,82 @@
              
          }];
         
-        
-        
-        
-        
-        
-        
-        
-
-    
-    
-    
-    
-    
-    
-    
+    }
+    if (animatorCentertype == AnimatorCenterType_Push){
+        {
+            
+            
+            CGPoint  center = CGPointMake(toViewController.view.center.x, toViewController.view.center.y);
+            
+            UIView * colorEffectViw = [[UIView alloc]initWithFrame:CGRectMake(-0, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height)];
+            [[transitionContext containerView ]addSubview:colorEffectViw];
+            colorEffectViw.backgroundColor =[UIColor colorWithPatternImage:[AnimatorCenter imageWithView:toViewController.view]];
+            
+            colorEffectViw.center= CGPointMake(-center.x, toViewController.view.frame.size.height+center.y);
+            
+            toViewController.view.hidden =YES;
+            
+            fromViewController.view.alpha = 1;
+            
+            
+            
+            
+            [[transitionContext containerView] addSubview:toViewController.view];
+            [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
+             {
+                 
+                 
+                 colorEffectViw.center= CGPointMake(-center.x, toViewController.view.frame.size.height+center.y-20);
+                 CATransition *animation = [CATransition animation];
+                 
+                 animation.type = kCATransitionPush;
+                 
+                 animation.subtype = kCATransitionFromTop;
+                 animation.duration = 0.5;
+                 fromViewController.view.alpha = .8;
+                 [colorEffectViw.layer addAnimation:animation forKey:nil];
+                 
+                 
+                 
+                 
+                 
+                 
+             } completion:^(BOOL finished) {
+                 
+                 
+                 
+                 
+                 [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
+                  {
+                      
+                      colorEffectViw.center= CGPointMake(center.x, center.y);
+                      
+                  } completion:^(BOOL finished) {
+                      fromViewController.view.transform = CGAffineTransformIdentity;
+                      fromViewController.view.alpha = 1;
+                      toViewController.view.transform = CGAffineTransformIdentity;
+                      toViewController.view.hidden =NO;
+                      
+                      
+                      
+                      
+                      
+                      colorEffectViw.hidden=YES;
+                      [colorEffectViw removeFromSuperview];
+                      [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                  }];
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+             }];
+        }
+    }
 }
 
 @end

@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 #import  "SecondViewController.h"
-#import "Animator.h"
-#import "AnimationPop.h"
+#import "AnimatorCircular.h"
+#import "AnimatorCenter.h"
 @interface ViewController ()<UINavigationControllerDelegate>
 
 @end
@@ -53,9 +53,15 @@
         switch(operation)
         {
             case UINavigationControllerOperationPush:
-                return [[Animator alloc] init];
+                return [[AnimatorCircular alloc] initWithStartLoction:_btn_navigate.frame withAnimationCircularType:AnimationCircularType_Push];
             case UINavigationControllerOperationPop:
-                return [[AnimationPop alloc] init];
+                
+            {
+                 UIButton * btn = [(SecondViewController*)fromVC btn_second];
+                
+                return [[AnimatorCircular alloc] initWithStartLoction:btn.frame withAnimationCircularType:AnimationCircularType_Pop];
+            }
+            
             default:
                 return nil;
         }
