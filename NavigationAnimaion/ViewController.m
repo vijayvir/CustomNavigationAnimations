@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import  "SecondViewController.h"
-
+#import "Animator.h"
+#import "AnimationPop.h"
 @interface ViewController ()<UINavigationControllerDelegate>
 
 @end
@@ -54,7 +55,7 @@
             case UINavigationControllerOperationPush:
                 return [[Animator alloc] init];
             case UINavigationControllerOperationPop:
-                return [[Animator alloc] init];
+                return [[AnimationPop alloc] init];
             default:
                 return nil;
         }

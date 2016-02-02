@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		10071A2E1C607157004794A0 /* DrawingViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 10071A2D1C607157004794A0 /* DrawingViews.m */; };
-		109490591C5F42E700697C6D /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = 109490581C5F42E700697C6D /* Animator.m */; };
+		107D8A381C60CCA500A8EA3A /* AnimationPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 107D8A351C60CCA500A8EA3A /* AnimationPop.m */; };
+		107D8A391C60CCA500A8EA3A /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = 107D8A371C60CCA500A8EA3A /* Animator.m */; };
 		1094905C1C5F438500697C6D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1094905B1C5F438500697C6D /* SecondViewController.m */; };
 		1094905F1C5F4EFB00697C6D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1094905E1C5F4EFB00697C6D /* ThirdViewController.m */; };
 		109490611C5F693C00697C6D /* File in Resources */ = {isa = PBXBuildFile; fileRef = 109490601C5F693C00697C6D /* File */; };
@@ -35,8 +36,10 @@
 /* Begin PBXFileReference section */
 		10071A2C1C607157004794A0 /* DrawingViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViews.h; sourceTree = "<group>"; };
 		10071A2D1C607157004794A0 /* DrawingViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViews.m; sourceTree = "<group>"; };
-		109490571C5F42E700697C6D /* Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animator.h; sourceTree = "<group>"; };
-		109490581C5F42E700697C6D /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
+		107D8A341C60CCA500A8EA3A /* AnimationPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationPop.h; sourceTree = "<group>"; };
+		107D8A351C60CCA500A8EA3A /* AnimationPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationPop.m; sourceTree = "<group>"; };
+		107D8A361C60CCA500A8EA3A /* Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animator.h; sourceTree = "<group>"; };
+		107D8A371C60CCA500A8EA3A /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
 		1094905A1C5F438500697C6D /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		1094905B1C5F438500697C6D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1094905D1C5F4EFB00697C6D /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
@@ -81,10 +84,19 @@
 			children = (
 				10071A2C1C607157004794A0 /* DrawingViews.h */,
 				10071A2D1C607157004794A0 /* DrawingViews.m */,
-				109490571C5F42E700697C6D /* Animator.h */,
-				109490581C5F42E700697C6D /* Animator.m */,
 			);
 			name = Viewa;
+			sourceTree = "<group>";
+		};
+		107D8A331C60CC9500A8EA3A /* AnimatedTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				107D8A341C60CCA500A8EA3A /* AnimationPop.h */,
+				107D8A351C60CCA500A8EA3A /* AnimationPop.m */,
+				107D8A361C60CCA500A8EA3A /* Animator.h */,
+				107D8A371C60CCA500A8EA3A /* Animator.m */,
+			);
+			name = AnimatedTransitioning;
 			sourceTree = "<group>";
 		};
 		10EA40461C5B71A4005517DD = {
@@ -116,6 +128,7 @@
 				1094905B1C5F438500697C6D /* SecondViewController.m */,
 				1094905D1C5F4EFB00697C6D /* ThirdViewController.h */,
 				1094905E1C5F4EFB00697C6D /* ThirdViewController.m */,
+				107D8A331C60CC9500A8EA3A /* AnimatedTransitioning */,
 				10071A2B1C607127004794A0 /* Viewa */,
 				109490601C5F693C00697C6D /* File */,
 				109490621C5F7A4700697C6D /* centerToCenter */,
@@ -255,13 +268,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107D8A391C60CCA500A8EA3A /* Animator.m in Sources */,
 				1094905C1C5F438500697C6D /* SecondViewController.m in Sources */,
-				109490591C5F42E700697C6D /* Animator.m in Sources */,
 				10071A2E1C607157004794A0 /* DrawingViews.m in Sources */,
 				1094905F1C5F4EFB00697C6D /* ThirdViewController.m in Sources */,
 				10EA405B1C5B71A4005517DD /* ViewController.m in Sources */,
 				10EA40581C5B71A4005517DD /* AppDelegate.m in Sources */,
 				10EA40551C5B71A4005517DD /* main.m in Sources */,
+				107D8A381C60CCA500A8EA3A /* AnimationPop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

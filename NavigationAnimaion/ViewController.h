@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Animator.h"
+
 
 @interface ViewController : UIViewController
 

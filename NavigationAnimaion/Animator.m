@@ -7,14 +7,13 @@
 //
 
 #import "Animator.h"
-#import  "SecondViewController.h"
-#import "ViewController.h"
+
 
 @implementation Animator
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
 {
-    return 1;
+    return .5;
 }
 + (UIImage *) imageWithView:(UIView *)view
 {
@@ -27,7 +26,7 @@
     
     
     
-    CGRect rect = CGRectMake(0,0,320,568);
+    CGRect rect = CGRectMake(0,0, view.frame.size.width, view.frame.size.height);
     UIGraphicsBeginImageContext( rect.size );
     [img drawInRect:rect];
     UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
@@ -45,113 +44,40 @@
     
     
     
-    if ([toViewController isKindOfClass:[SecondViewController class]])
+ 
         
     {
-        UIButton * btn = [(ViewController*)fromViewController btn_navigate];
-        toViewController.view.hidden =NO;
+        
+        
+        CGPoint  center = CGPointMake(toViewController.view.center.x, toViewController.view.center.y);
+        
+        UIView * colorEffectViw = [[UIView alloc]initWithFrame:CGRectMake(-0, 0, toViewController.view.frame.size.width, toViewController.view.frame.size.height)];
+        [[transitionContext containerView ]addSubview:colorEffectViw];
+        colorEffectViw.backgroundColor =[UIColor colorWithPatternImage:[Animator imageWithView:toViewController.view]];
+        
+        colorEffectViw.center= CGPointMake(-center.x, toViewController.view.frame.size.height+center.y);
+        
+        toViewController.view.hidden =YES;
+        
         fromViewController.view.alpha = 1;
         
+        
+    
+        
         [[transitionContext containerView] addSubview:toViewController.view];
-        
-        
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
         {
+
             
-            fromViewController.view.alpha = 0;
-            
-            CGPoint  extremePoint = CGPointMake(600,600);
-            double radius = sqrt((extremePoint.x*extremePoint.x) + (extremePoint.y*extremePoint.y));
-            
-            UIBezierPath *circleMaskPathFinal =  [UIBezierPath bezierPathWithOvalInRect:CGRectInset(btn.frame, -radius, -radius)];
-            
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path =circleMaskPathFinal.CGPath;
-            toViewController.view.layer.mask = maskLayer;
-            
-            
-            UIBezierPath * circleMaskPathInitial = [UIBezierPath bezierPathWithOvalInRect:btn.frame];
-            
-            CABasicAnimation *animastion =
-            [CABasicAnimation animationWithKeyPath:@"path"];
-            animastion.fromValue = (id)circleMaskPathInitial.CGPath;
-            animastion.toValue = (id)circleMaskPathFinal.CGPath;
-            [animastion setDuration:.5];
-            animastion.delegate =self;
-            
-            [maskLayer addAnimation:animastion forKey:@"path"];
-            
+            colorEffectViw.center= CGPointMake(-center.x, toViewController.view.frame.size.height+center.y-20);
             CATransition *animation = [CATransition animation];
             
             animation.type = kCATransitionPush;
-            animation.duration = .5;
             
-            
-            
-            
-            
-            
-            
-        } completion:^(BOOL finished) {
-            
-            
-            fromViewController.view.transform = CGAffineTransformIdentity;
-            fromViewController.view.alpha = 1;
-            toViewController.view.transform = CGAffineTransformIdentity;
-            toViewController.view.hidden =NO;
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-            [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask =nil;
-            
-            
-            
-            
-            
-            // colorEffectViw = nil;
-            
-        }];
-    }
-    
-    else if ([toViewController isKindOfClass:[ViewController class]])
-    {
-        
-        
-        UIButton * btn = [(SecondViewController*)fromViewController btn_second];
-        fromViewController.view.hidden =NO;
-        
-        toViewController.view.alpha = 1;
-        
-        [[transitionContext containerView] addSubview:toViewController.view];
-        
-        
-        [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
-        {
-            
-            // toViewController.view.alpha = 1;
-            fromViewController.view.alpha = 0;
-            CGPoint  extremePoint = CGPointMake(600,600);
-            
-            double radius = sqrt((extremePoint.x*extremePoint.x) + (extremePoint.y*extremePoint.y));
-            
-            UIBezierPath *circleMaskPathFinal =  [UIBezierPath bezierPathWithOvalInRect:CGRectInset(btn.frame, -radius,-radius)];
-            
-            CAShapeLayer *maskLayer = [CAShapeLayer layer];
-            maskLayer.path =circleMaskPathFinal.CGPath;
-            toViewController.view.layer.mask = maskLayer;
-            
-            
-            UIBezierPath * circleMaskPathInitial = [UIBezierPath bezierPathWithOvalInRect:btn.frame];
-            
-            CABasicAnimation *animastion =
-            [CABasicAnimation animationWithKeyPath:@"path"];
-            animastion.fromValue = (id)circleMaskPathInitial.CGPath;
-            animastion.toValue = (id)circleMaskPathFinal.CGPath;
-            [animastion setDuration:.5];
-            animastion.delegate =self;
-            
-            [maskLayer addAnimation:animastion forKey:@"path"];
-            
-            
-            
+            animation.subtype = kCATransitionFromTop;
+            animation.duration = 0.5;
+            fromViewController.view.alpha = .8;
+            [colorEffectViw.layer addAnimation:animation forKey:nil];
             
             
             
@@ -161,33 +87,40 @@
         } completion:^(BOOL finished) {
             
             
-            toViewController.view.transform = CGAffineTransformIdentity;
-            toViewController.view.alpha = 1;
-            
-            fromViewController.view.transform = CGAffineTransformIdentity;
-            fromViewController.view.hidden =NO;
-            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-            [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey].view.layer.mask =nil;
             
             
+            [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^
+            {
+                
+                colorEffectViw.center= CGPointMake(center.x, center.y);
+               
+            } completion:^(BOOL finished) {
+                fromViewController.view.transform = CGAffineTransformIdentity;
+                fromViewController.view.alpha = 1;
+                toViewController.view.transform = CGAffineTransformIdentity;
+                toViewController.view.hidden =NO;
+                
+                
+                
+                
+                
+                colorEffectViw.hidden=YES;
+                [colorEffectViw removeFromSuperview];
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            }];
             
             
             
-            // colorEffectViw = nil;
+            
+            
+            
+            
+    
             
         }];
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
     
+   
     
     
     
