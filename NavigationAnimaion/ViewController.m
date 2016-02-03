@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import  "SecondViewController.h"
+#import "FourthViewController.h"
+
+
 #import "AnimatorCircular.h"
 #import "AnimatorCenter.h"
 @interface ViewController ()<UINavigationControllerDelegate>
@@ -19,18 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Add this Line
     self.navigationController.delegate = self;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -66,7 +59,23 @@
                 return nil;
         }
     }
-    
+    else  if (([toVC isKindOfClass:[FourthViewController class]] &&  [fromVC isKindOfClass:[ViewController class]]) || ([toVC isKindOfClass:[ViewController class]] &&  [fromVC isKindOfClass:[FourthViewController class]] ) )
+    {
+        switch(operation)
+        {
+            case UINavigationControllerOperationPush:
+                return [[AnimatorCenter alloc] initWithStartFrome:LeftBottom withAnimatorCenterType:AnimatorCenterType_Push];
+            case UINavigationControllerOperationPop:
+                
+            {
+         
+                return [[AnimatorCenter alloc] initWithStartFrome:LeftBottom withAnimatorCenterType:AnimatorCenterType_Pop];
+            }
+                
+            default:
+                return nil;
+        }
+    }
  
     
     return nil;

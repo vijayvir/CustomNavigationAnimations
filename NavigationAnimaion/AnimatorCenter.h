@@ -1,10 +1,4 @@
-//
-//  AnimationPop.h
-//  EducationApp
-//
-//  Created by Avneet on 02/02/16.
-//  Copyright (c) 2016 Avneet Singh. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 
@@ -25,9 +19,25 @@ typedef enum : int
     
 }
 AnimatorCenterType;
+typedef enum : int
+{
+    LeftTop = 0 ,
+    LeftCenter  = 1 ,
+    LeftBottom = 2 ,
+    
+    CenterTop = 3 ,
+    CenterCenter = 4 ,
+    CenterBottom = 5 ,
+    
+    RightTop = 6 ,
+    RightCenter  = 7 ,
+    RightBottom = 8 ,
+    
+}
+FromType;
+
+- (id) initWithStartFrome: (FromType)from withAnimatorCenterType:(AnimatorCenterType)animationType;
 
 
-
-- (id) initWithStartLoction: (CGRect)frame withAnimationCircularType:(AnimatorCenterType)animationCircularType;
 
 @end

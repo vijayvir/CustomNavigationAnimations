@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10071A2E1C607157004794A0 /* DrawingViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 10071A2D1C607157004794A0 /* DrawingViews.m */; };
 		107D8A381C60CCA500A8EA3A /* AnimatorCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 107D8A351C60CCA500A8EA3A /* AnimatorCenter.m */; };
 		107D8A3E1C60CE9A00A8EA3A /* AnimatorCircular.m in Sources */ = {isa = PBXBuildFile; fileRef = 107D8A3D1C60CE9A00A8EA3A /* AnimatorCircular.m */; };
 		1094905C1C5F438500697C6D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1094905B1C5F438500697C6D /* SecondViewController.m */; };
 		1094905F1C5F4EFB00697C6D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1094905E1C5F4EFB00697C6D /* ThirdViewController.m */; };
-		109490611C5F693C00697C6D /* File in Resources */ = {isa = PBXBuildFile; fileRef = 109490601C5F693C00697C6D /* File */; };
-		109490631C5F7A4700697C6D /* centerToCenter in Resources */ = {isa = PBXBuildFile; fileRef = 109490621C5F7A4700697C6D /* centerToCenter */; };
 		10EA40551C5B71A4005517DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EA40541C5B71A4005517DD /* main.m */; };
 		10EA40581C5B71A4005517DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EA40571C5B71A4005517DD /* AppDelegate.m */; };
 		10EA405B1C5B71A4005517DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EA405A1C5B71A4005517DD /* ViewController.m */; };
@@ -21,6 +18,7 @@
 		10EA40601C5B71A4005517DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10EA405F1C5B71A4005517DD /* Images.xcassets */; };
 		10EA40631C5B71A4005517DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10EA40611C5B71A4005517DD /* LaunchScreen.xib */; };
 		10EA406F1C5B71A4005517DD /* NavigationAnimaionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EA406E1C5B71A4005517DD /* NavigationAnimaionTests.m */; };
+		10FFDCE01C61D60400AC053B /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FFDCDF1C61D60400AC053B /* FourthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10071A2C1C607157004794A0 /* DrawingViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViews.h; sourceTree = "<group>"; };
-		10071A2D1C607157004794A0 /* DrawingViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViews.m; sourceTree = "<group>"; };
 		107D8A341C60CCA500A8EA3A /* AnimatorCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatorCenter.h; sourceTree = "<group>"; };
 		107D8A351C60CCA500A8EA3A /* AnimatorCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatorCenter.m; sourceTree = "<group>"; };
 		107D8A3C1C60CE9A00A8EA3A /* AnimatorCircular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatorCircular.h; sourceTree = "<group>"; };
@@ -44,8 +40,6 @@
 		1094905B1C5F438500697C6D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1094905D1C5F4EFB00697C6D /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		1094905E1C5F4EFB00697C6D /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		109490601C5F693C00697C6D /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
-		109490621C5F7A4700697C6D /* centerToCenter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = centerToCenter; sourceTree = "<group>"; };
 		10EA404F1C5B71A4005517DD /* NavigationAnimaion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationAnimaion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EA40531C5B71A4005517DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10EA40541C5B71A4005517DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -59,6 +53,8 @@
 		10EA40681C5B71A4005517DD /* NavigationAnimaionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationAnimaionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EA406D1C5B71A4005517DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10EA406E1C5B71A4005517DD /* NavigationAnimaionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationAnimaionTests.m; sourceTree = "<group>"; };
+		10FFDCDE1C61D60400AC053B /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		10FFDCDF1C61D60400AC053B /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,15 +75,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10071A2B1C607127004794A0 /* Viewa */ = {
-			isa = PBXGroup;
-			children = (
-				10071A2C1C607157004794A0 /* DrawingViews.h */,
-				10071A2D1C607157004794A0 /* DrawingViews.m */,
-			);
-			name = Viewa;
-			sourceTree = "<group>";
-		};
 		107D8A331C60CC9500A8EA3A /* AnimatedTransitioning */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,15 +127,9 @@
 				10EA40571C5B71A4005517DD /* AppDelegate.m */,
 				10EA40591C5B71A4005517DD /* ViewController.h */,
 				10EA405A1C5B71A4005517DD /* ViewController.m */,
-				1094905A1C5F438500697C6D /* SecondViewController.h */,
-				1094905B1C5F438500697C6D /* SecondViewController.m */,
-				1094905D1C5F4EFB00697C6D /* ThirdViewController.h */,
-				1094905E1C5F4EFB00697C6D /* ThirdViewController.m */,
-				107D8A331C60CC9500A8EA3A /* AnimatedTransitioning */,
-				10071A2B1C607127004794A0 /* Viewa */,
-				109490601C5F693C00697C6D /* File */,
-				109490621C5F7A4700697C6D /* centerToCenter */,
+				10FFDCDD1C61D5DF00AC053B /* viewControllers */,
 				10EA405C1C5B71A4005517DD /* Main.storyboard */,
+				10FFDCDC1C61D43500AC053B /* Support */,
 				10EA405F1C5B71A4005517DD /* Images.xcassets */,
 				10EA40611C5B71A4005517DD /* LaunchScreen.xib */,
 				10EA40521C5B71A4005517DD /* Supporting Files */,
@@ -180,6 +161,27 @@
 				10EA406D1C5B71A4005517DD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10FFDCDC1C61D43500AC053B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				107D8A331C60CC9500A8EA3A /* AnimatedTransitioning */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		10FFDCDD1C61D5DF00AC053B /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1094905A1C5F438500697C6D /* SecondViewController.h */,
+				1094905B1C5F438500697C6D /* SecondViewController.m */,
+				1094905D1C5F4EFB00697C6D /* ThirdViewController.h */,
+				1094905E1C5F4EFB00697C6D /* ThirdViewController.m */,
+				10FFDCDE1C61D60400AC053B /* FourthViewController.h */,
+				10FFDCDF1C61D60400AC053B /* FourthViewController.m */,
+			);
+			name = viewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				109490611C5F693C00697C6D /* File in Resources */,
-				109490631C5F7A4700697C6D /* centerToCenter in Resources */,
 				10EA405E1C5B71A4005517DD /* Main.storyboard in Resources */,
 				10EA40631C5B71A4005517DD /* LaunchScreen.xib in Resources */,
 				10EA40601C5B71A4005517DD /* Images.xcassets in Resources */,
@@ -284,8 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FFDCE01C61D60400AC053B /* FourthViewController.m in Sources */,
 				1094905C1C5F438500697C6D /* SecondViewController.m in Sources */,
-				10071A2E1C607157004794A0 /* DrawingViews.m in Sources */,
 				107D8A3E1C60CE9A00A8EA3A /* AnimatorCircular.m in Sources */,
 				1094905F1C5F4EFB00697C6D /* ThirdViewController.m in Sources */,
 				10EA405B1C5B71A4005517DD /* ViewController.m in Sources */,
